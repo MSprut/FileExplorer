@@ -6,7 +6,7 @@ Rails 5.1.6
 
 
 ##### * Database creation and initialization
-Before manipulation with database open database.yml and change "root" and "pass" for you actual value.
+Before manipulation with database change your database.yml with actual "root" and "pass" values.
 Execute "rake db:create db:migrate" in terminal inside app folder.
 
 
@@ -35,12 +35,17 @@ The tests not exists yet.
 
 
   4. GET /api/v1/uploads/get/:id
-     - Download the file with specified id
+     - Download the file with specified ID
 
 
   5. GET /api/v1/browse/:folder_id
-     - Browse the folder with specified id
+     - Browse the folder with specified ID
 
+  5. POST api/v1/new_folder?folder[name]=FolderName&folder[parent_id]=1&commit=Create Folder
+     - Create new folder or subfolder
+     - Parameters:
+       - folder[name] - New folder/subfolder name
+       - folder[parent_id] - Parent folder ID (need for subfolder, it can be get from index of all folders)
 
 ##### * Dropbox API
   Not exists yet
