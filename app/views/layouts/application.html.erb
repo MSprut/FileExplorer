@@ -3,7 +3,7 @@
   <head>
     <title>FileExplorer <%= content_for?(:title) ? yield(:title) : "web application" %></title>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
