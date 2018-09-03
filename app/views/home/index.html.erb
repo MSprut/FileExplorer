@@ -1,0 +1,75 @@
+<%= javascript_include_tag "home" %>
+
+<%= form_tag remove_all_path, method: :delete do %>
+
+<div id="menu"> 
+  <ul id= "top_menu">     
+    <% if @current_folder %> 
+      <li><%= link_to "Upload", new_sub_file_path(@current_folder) %></li>
+      <li><%= link_to "New Folder", new_sub_folder_path(@current_folder) %></li>
+      <!--<li class="remove-all"><%#= link_to "Remove All", remove_all_path %></li>-->
+    <% else %>
+      <li><%= link_to "Upload", new_asset_file_path %></li>
+      <li><%= link_to "New Folder", new_folder_path %></li>
+      <!--<li class="remove-all"><%#= link_to "Remove All", remove_all_path %></li>-->
+    <% end %>
+    <div class="btn-message"></div>
+  </ul> 
+</div> 
+
+<%= render :partial => "breadcrumbs" %>
+
+<div class="asset_list_header"> 
+  <div class="file_check_header">&nbsp;</div>
+  <div class="file_name_header">File Name</div> 
+  <div class="file_size_header">Size</div> 
+  <div class="file_last_updated_header">Modified</div> 
+</div>
+
+<div class="asset_list"> 
+  <!-- Listing Folders -->
+  <% @folders.each do |folder| %> 
+    <div class="asset_details folder">
+      <div class="file_check">
+        <%= check_box_tag "folder_ids[#{folder.id}]", folder.id, false, class: 'item-ids' %></div>
+      <div class="file_name"><%= link_to folder.name, browse_path(folder) %></div> 
+      <div class="file_size"> - </div> 
+      <div class="file_last_updated"> - </div> 
+
+      <div class="context-menu">
+        <i class="fa fa-arrow-circle-down fa-2x" aria-hidden="true"></i>
+        <div class="actions"> 
+          <div class="rename"> 
+            <%= link_to "Rename", rename_folder_path(folder) %>
+          </div> 
+          <div class="delete"> 
+            <%= link_to "Delete", folder, data: { confirm: 'Are you sure to delete the folder and all of its contents?' }, method: :delete %>
+          </div> 
+        </div>
+      </div> 
+    </div> 
+  <% end %> 
+  
+  <!-- Listing Files -->
+  <% @asset_files.each do |asset_file| %> 
+    <div class="asset_details file"> 
+      <div class="file_check">
+        <%= check_box_tag "asset_file_ids[#{asset_file.id}]", asset_file.id, false, class: 'item-ids' %></div>
+      <div class="file_name"><%= link_to asset_file.file_name, download_url(asset_file) %></div> 
+      <div class="file_size"><%= number_to_human_size(asset_file.file_size, :precision => 2) %></div> 
+      <div class="file_last_updated"><%= asset_file.uploaded_file_updated_at %></div> 
+      <div class="context-menu">
+        <i class="fa fa-arrow-circle-down fa-2x" aria-hidden="true"></i>
+        <div class="actions"> 
+          <div class="download"> 
+            <%= link_to "Download", download_url(asset_file), data: { turbolinks: false } %>
+          </div> 
+          <div class="delete"> 
+            <%= link_to "Delete", asset_file, data: { confirm: 'Are you sure?' }, method: :delete %>
+          </div> 
+        </div>
+      </div> 
+    </div> 
+  <% end %> 
+</div>
+<% end %>

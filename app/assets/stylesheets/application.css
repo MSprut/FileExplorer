@@ -1,0 +1,362 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require font-awesome
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+  background-color: #EFEFEF;
+  font-family: Verdana, Helvetica, Arial;
+  font-size: 14px;
+}
+
+a img {
+  border: none;
+}
+
+a {
+  color: #0000FF;
+}
+
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+
+#container {
+    width: 800px; 
+  margin: 0 auto; 
+  background-color: #FFF; 
+  padding: 20px 40px; 
+  border: solid 1px #BFBFBF;   
+}
+
+#flash_notice, #flash_error, #flash_alert {
+  padding: 5px 8px;
+  margin: 10px 0;
+}
+
+#flash_notice {
+  background-color: #CFC;
+  border: solid 1px #6C6;
+}
+
+#flash_error, #flash_alert {
+  background-color: #FCC;
+  border: solid 1px #C66;
+}
+
+.fieldWithErrors {
+  display: inline;
+}
+
+.error_messages {
+  width: 400px;
+  border: 2px solid #CF0000;
+  padding: 0px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  font-size: 12px;
+}
+
+.error_messages h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 10px;
+  font-size: 12px;
+  margin: 0;
+  background-color: #c00;
+  color: #fff;
+}
+
+.error_messages p {
+  margin: 8px 10px;
+}
+
+.error_messages ul {
+  margin: 0;
+}
+
+.header_wrapper { 
+    width: 880px; 
+    margin: 0 auto; 
+    overflow:hidden; 
+    padding:20px 0; 
+} 
+.logo a{ 
+    color: #338DCF; 
+    float: left; 
+    font-size: 48px; 
+    font-weight: bold; 
+    text-shadow: 2px 2px 2px #FFFFFF; 
+    text-decoration:none; 
+} 
+
+.logo a:hover{ 
+    background-color: transparent;
+    text-decoration:none; 
+} 
+
+#login_user_status { 
+    float:right;     
+}
+
+.asset_list_header, .asset_list, .asset_details { 
+    width:800px; 
+    font-weight:bold; 
+    font-size:12px; 
+    overflow:hidden; 
+  
+}
+
+.file_check_header, .file_check { 
+    width:30px; 
+    float:left; 
+    padding-left:5px; 
+} 
+
+.file_name_header, .file_name { 
+    width:350px; 
+    float:left; 
+    padding-left:20px; 
+} 
+.file_size_header, .file_size { 
+    width:100px; 
+    float:left; 
+} 
+.file_last_updated_header, .file_last_updated { 
+    width:150px; 
+    float:left; 
+} 
+.asset_list { 
+    padding:20px 0; 
+} 
+.asset_details { 
+    font-weight:normal; 
+    height:25px; 
+    line-height:25px; 
+    border:1px solid #FFF; 
+    width:790px; 
+    color:#4F4F4F; 
+} 
+  
+.asset_details a, .asset_details a:visited { 
+    text-decoration:none; 
+    color:#1D96EF; 
+    font-size:12px; 
+}
+
+.asset_details a:hover {
+  background-color: transparent;
+  text-decoration:none; 
+}
+
+#menu { 
+    width:800px; 
+    padding:0 20px; 
+    margin:20px auto ; 
+    overflow:hidden; 
+} 
+#menu ul{ 
+    padding:0; 
+    margin:0; 
+} 
+#menu ul li { 
+    list-style:none; 
+    float:left; 
+    display:block; 
+    margin-right:10px; 
+  
+  
+} 
+#menu ul li a, #menu ul li a:visited{ 
+    display:block; 
+    padding:0 15px; 
+    line-height:25px; 
+    text-decoration:none; 
+    color:#45759F; 
+    background:#EFF8FF; 
+    border:1px solid #CFEBFF; 
+} 
+#menu ul li a:hover, #menu ul li a:active{ 
+    background:#DFF1FF; 
+    border:1px solid #AFDDFF; 
+}
+
+#menu ul li.remove-all{
+  /*display: none;*/
+}
+
+#menu ul li a.not-active{
+  cursor: default;
+  text-decoration: none;
+  display:block; 
+  padding:0 15px; 
+  line-height:25px; 
+  text-decoration:none; 
+  color:#d0d0d0; 
+  background:#EfEfEf; 
+  border:1px solid #d5d5d5; 
+}
+
+.breadcrumbs { 
+   margin:10px 0; 
+   font-weight:bold; 
+} 
+.breadcrumbs a { 
+   color:#1D96EF; 
+   text-decoration:none; 
+}
+
+.breadcrumbs a:hover { 
+   background-color: transparent; 
+   text-decoration:none; 
+}
+
+.context-menu .actions { 
+	display: none;
+    float:right; 
+    font-size:11px; 
+    background-color: white;
+    padding: 5px;
+    border: 1px solid #d0d0d0;
+    border-radius: 3px;
+} 
+.share, .rename, .download, .delete{ 
+    float:left;  
+} 
+.asset_details .share a,.asset_details .rename a,.asset_details .download a,.asset_details .delete a{ 
+    border: 1px solid #CFE9FF; 
+    font-size: 11px; 
+    margin-left: 5px; 
+    padding: 0 2px; 
+} 
+.asset_details .share a:hover,.asset_details .rename a:hover,.asset_details .download a:hover,.asset_details .delete a:hover{ 
+    border:1px solid #8FCDFF; 
+} 
+  
+.asset_details .delete a{ 
+    color:#BF0B12; 
+    border:1px solid #FFCFD1; 
+} 
+  
+.asset_details .delete a:hover{ 
+    color:#BF0B12; 
+    border:1px solid #FF8F93; 
+}
+
+.asset_details:hover {
+	background-color: #d0e0f0;
+}
+
+.context-menu{
+	display: none;
+	position:absolute;
+    z-index: 999;
+    padding: 0px 0px;
+	height: auto;
+	width: auto;
+}
+
+.folder .file_name:before {
+  content: "\f07b";  /* this is your text. You can also use UTF-8 character codes as I do here */
+  font-family: FontAwesome;
+  left:-5px;
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.file .file_name:before {
+  content: "\f15b";  /* this is your text. You can also use UTF-8 character codes as I do here */
+  font-family: FontAwesome;
+  left:-5px;
+  font-size: 16px;
+  margin-right: 9px;
+}
+
+/*************** BIG CHECKBOX FONT AWESOME************************/
+input[type='checkbox'].bigcheck + span.bigcheck-target {
+    font-family: FontAwesome; /* use an icon font for the checkbox */    
+    font-size: 1.5em !important;
+    vertical-align: middle;
+    line-height: 100%;
+    padding: 0;
+    color: #61bb61;
+    //cursor: pointer;
+}
+
+table#cashdesk input[type='checkbox'].bigcheck + span.bigcheck-target {
+    font-size: 18pt !important;
+}
+
+input[type='checkbox'].bigcheck + span.bigcheck-target:after {
+    content: "\f096"; /* In fontawesome, is an open square (fa-square-o) */
+    //color: #61bb61; 
+}
+
+input[type='checkbox'].bigcheck:checked + span.bigcheck-target:after {
+    content: "\f046"; /* fontawesome checked box (fa-check-square-o) */
+    //color: #61bb61;
+}
+
+input[type='checkbox'].bigcheck.minus:checked + span.bigcheck-target:after {
+    content: "\f147"; /* fontawesome checked box (fa-minus-square-o) */
+    //color: #61bb61;
+}
+
+input[type='checkbox'].bigcheck:disabled + span.bigcheck-target:after {
+    //content: "\f096"; /* fontawesome checked box (fa-check-square-o) */
+    color: #c0c0c0;
+}
+
+input[type='checkbox'].bigcheck[readonly] + span.bigcheck-target:after {
+    //content: "\f096"; /* fontawesome checked box (fa-check-square-o) */
+    color: #c0c0c0;
+}
+
+input[type='checkbox'].bigcheck {
+  display: none;
+}
+
+label.bigcheck { 
+  width:16px;
+  display: inline-block;
+}
+
+input[type="checkbox"].bigcheck:not([readonly]) + span.bigcheck-target:hover:after {
+  text-shadow: 1px 1px 1px #c0c0c0;
+}
+
+.grey{
+  color: grey;
+}
+
+.black{
+  color: black !important;
+}
+
+.white{
+  color: white !important;
+}
+
+.btn-message{
+  display: none;
+  position:absolute;
+  z-index: 999;
+  padding: 20px 20px;
+  height: auto;
+  width: auto;
+}
