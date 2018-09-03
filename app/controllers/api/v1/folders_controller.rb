@@ -1,6 +1,7 @@
 class Api::V1::FoldersController < ApplicationController
   before_action :authenticate_user! 
   before_action :set_folder, only: [:show, :update, :destroy]
+  skip_before_action :verify_authenticity_token, only: [:create]
 
   # GET /folders
   # GET /folders.json
@@ -23,6 +24,7 @@ class Api::V1::FoldersController < ApplicationController
      @current_folder = current_user.folders.find(params[:folder_id]) 
      @folder.parent_id = @current_folder.id 
    end
+    render json: @folder, status: :ok
   end
 
   # GET /folders/1/edit
@@ -36,21 +38,10 @@ class Api::V1::FoldersController < ApplicationController
   def create
     @folder = current_user.folders.new(folder_params)
 
-    respond_to do |format|
-      if @folder.save
-        flash[:notice] = "Folder was successfully created."
-        format.html do
-          if @folder.parent 
-            redirect_to browse_path(@folder.parent)
-          else
-            redirect_to root_url
-          end
-        end
-        format.json { render :show, status: :created, location: @folder }
-      else
-        format.html { render :new }
-        format.json { render json: @folder.errors, status: :unprocessable_entity }
-      end
+    if @folder.save
+      render json: @folder, status: :created
+    else
+      render json: @folder.errors, status: :unprocessable_entity
     end
   end
 

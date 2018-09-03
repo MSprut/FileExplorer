@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       resources :home
       get "uploads/get/:id", to: "asset_files#get", as: "download"
       get "browse/:folder_id", to: "home#browse", as: "browse"
+      post "new_folder", to: "folders#create"#, as: "new_folder"
     end
   end
 end
