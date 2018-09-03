@@ -6,7 +6,7 @@ Rails 5.1.6
 
 
 ##### * Database creation and initialization
-Before manipulation with database change your database.yml with actual "root" and "pass" values.
+Before manipulation with database rename files database.example.yml and secrets.example.yml in /config directory to database.yml and secrets.yml respectively. Then edit your database.yml with actual DB "username" and "password" values.
 Execute "rake db:create db:migrate" in terminal inside app folder.
 
 
